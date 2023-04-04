@@ -49,6 +49,7 @@ export function Home() {
         renderItem={({ item }) => (
           <FoodList data={item} />
         )}
+        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   )
