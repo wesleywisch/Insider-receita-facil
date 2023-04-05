@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react';
-import { ScrollView, Text, StyleSheet, Pressable, Image, View } from 'react-native';
+import { ScrollView, Text, StyleSheet, Pressable, Image, View, FlatList } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
 
@@ -42,6 +42,10 @@ export function Detail() {
           <Feather name="share-2" size={24} color="#121212" />
         </Pressable>
       </View>
+
+      {route.params?.data.ingredients.map((item) => (
+        <Ingredients key={String(item.id)} data={item} />
+      ))}
     </ScrollView>
   )
 }
