@@ -1,10 +1,26 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
-
-export function Instructions() {
+export function Instructions({ data, index }) {
   return (
-    <View>
-      <Text>Color molho na massa</Text>
+    <View style={styles.container}>
+      <Text style={styles.indicator}>{index + 1}- </Text>
+      <Text style={styles.text}>{data.text}</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    padding: 8,
+    marginBottom: 14,
+    alignItems: "center",
+  },
+  indicator: {
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  text: {
+    lineHeight: 20,
+  },
+})
